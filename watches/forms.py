@@ -1,6 +1,6 @@
 from django import forms
 from .models import Watch
-from cloudinary.models import CloudinaryField
+from cloudinary.forms import CloudinaryJsFileField
 
 
 class WatchForm(forms.ModelForm):
@@ -14,4 +14,4 @@ class WatchForm(forms.ModelForm):
             'status',
             'cover'
         )
-    cover = CloudinaryField()
+    cover = CloudinaryJsFileField()

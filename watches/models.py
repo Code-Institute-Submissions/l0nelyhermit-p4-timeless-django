@@ -47,7 +47,7 @@ class Watch(models.Model):
     )
 
     # Picture for the watch
-    cover = CloudinaryField()
+    cover = CloudinaryField('image')
 
     def __str__(self):
         return (self.watch_brand + " " + self.watch_model)

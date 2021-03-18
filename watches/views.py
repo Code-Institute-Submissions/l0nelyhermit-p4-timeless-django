@@ -12,7 +12,7 @@ def index(request):
 def create_post(request):
     if request.method == "POST":
         form = WatchForm(request.POST)
-        print(form)
+        form.save()
         return redirect(index)
     else:
         form = WatchForm()
