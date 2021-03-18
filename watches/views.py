@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .models import Watch
 from .forms import WatchForm
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 def index(request):
@@ -9,10 +10,13 @@ def index(request):
 # create route for new watch listing
 
 
+@login_required
 def create_post(request):
     if request.method == "POST":
         form = WatchForm(request.POST)
-        form.save()
+        new_watch = form.save(commit=False)
+        new_watch.user = request.user
+        new_watch.save()
         return redirect(reverse(show_post))
     else:
         form = WatchForm()
@@ -38,6 +42,7 @@ def edit_post(request, item_id):
         if modified_form.is_valid():
             # process the form and save to database if it is valid
             form = modified_form.save(commit=False)
+            form.user = watch_edited.user
             form.save()
             return redirect(reverse(show_post))
         else:

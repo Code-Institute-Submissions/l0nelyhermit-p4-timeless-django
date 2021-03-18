@@ -19,6 +19,7 @@
                         <a href="{% url 'delete_post' item_id=watch.id %}" class="text-danger fst-italic">unlist</a></small>
                     <p class="mt-3">{{ watch.description }}</p>
                     <small class="text-muted">$ {{watch.price}}</small>
+                    <h6 class="text-dark fst-italic mt-2">Seller : {{watch.user}} </h6>
                 </div>
             </div>
             <hr/>

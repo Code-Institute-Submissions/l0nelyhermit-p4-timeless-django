@@ -1,10 +1,13 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 
 class Watch(models.Model):
+    # User details
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     # Watch brand - prefix brand options
     WATCH_BRAND = [
@@ -21,18 +24,16 @@ class Watch(models.Model):
 
     # Allow user to enter watch model
     watch_model = models.CharField(
-        max_length=50,
+        max_length=100,
         blank=False
     )
 
     # Description for the watch
-    description = models.TextField(max_length=255)
+    description = models.TextField(max_length=500)
 
     # Sale price of the watch
-    price = models.DecimalField(
+    price = models.IntegerField(
         blank=False,
-        max_digits=9,
-        decimal_places=2
     )
 
     # Watch available for sale
