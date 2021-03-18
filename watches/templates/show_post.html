@@ -5,6 +5,7 @@
 <section class="container-fluid ">
     <div class="row">
         <div class="col-12 ">
+            <hr>
             {% for watch in watches %}
             <div class="row px-md-5 px-2 mb-3">
                 <div class="col-md-4 col-12 p-2 text-center">
@@ -13,13 +14,14 @@
                 <div class="col-md-8 col-12 py-2 px-3">
                     <h3>{{ watch.watch_brand }} {{watch.watch_model}}</h3>
                     <small>
-                        <a href="" class="text-muted fst-italic">modify</a>
+                        <a href="{% url 'edit_post' item_id=watch.id %}" class="text-muted fst-italic">modify</a>
                         |
                         <a href="" class="text-danger fst-italic">unlist</a></small>
                     <p class="mt-3">{{ watch.description }}</p>
                     <small class="text-muted">$ {{watch.price}}</small>
                 </div>
             </div>
+            <hr/>
             {% endfor %}
         </div>
     </div>
