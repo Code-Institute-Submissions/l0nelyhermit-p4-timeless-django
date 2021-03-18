@@ -8,20 +8,20 @@ class Watch(models.Model):
 
     # Watch brand - prefix brand options
     WATCH_BRAND = [
-        ('Rolex', 'Rolex'),
-        ('Omega', 'Omega'),
-        ('Patek Philippe', 'Patek Philippe'),
+        ('ROLEX', 'ROLEX'),
+        ('OMEGA', 'OMEGA'),
+        ('HUBLOT', 'HUBLOT'),
     ]
     watch_brand = models.CharField(
-        max_length=20,
+        max_length=30,
         choices=WATCH_BRAND,
-        default='Rolex',
+        default='ROLEX',
         blank=False
     )
 
     # Allow user to enter watch model
     watch_model = models.CharField(
-        max_length=30,
+        max_length=50,
         blank=False
     )
 

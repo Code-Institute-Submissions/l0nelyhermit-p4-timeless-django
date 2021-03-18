@@ -13,7 +13,7 @@ def create_post(request):
     if request.method == "POST":
         form = WatchForm(request.POST)
         form.save()
-        return redirect(index)
+        return redirect(reverse(show_post))
     else:
         form = WatchForm()
         return render(request, "create_post.html", {
@@ -49,3 +49,9 @@ def edit_post(request, item_id):
     return render(request, 'edit_post.html', {
         'form': form
     })
+
+
+def delete_post(request, item_id):
+    watch_delete = get_object_or_404(Watch, pk=item_id)
+    watch_delete.delete()
+    return redirect(reverse(show_post))
