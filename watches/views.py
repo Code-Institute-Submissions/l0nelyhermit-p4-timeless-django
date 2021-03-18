@@ -8,6 +8,8 @@ from .forms import WatchForm
 def index(request):
     return render(request, "index.html")
 
+# create route for new watch listing
+
 
 def create_post(request):
     if request.method == "POST":
@@ -19,3 +21,12 @@ def create_post(request):
         return render(request, "create_post.html", {
             'form': form
         })
+
+# show all watches in listing
+
+
+def show_post(request):
+    watches = Watch.objects.all()
+    return render(request, 'show_post.html', {
+        'watches': watches
+    })
