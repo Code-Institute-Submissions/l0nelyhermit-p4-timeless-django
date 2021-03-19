@@ -1,5 +1,6 @@
 .navbar-brand img {
     height: 120px;
+    font-size: 1rem;
 }
 main {
     height: 100vh;
@@ -27,4 +28,14 @@ main {
     font-size: 0.8rem;
     padding: 10px 40px;
     text-decoration: none;
+}
+
+.bg-rolex {
+    background: url("../images/bg-rolex.jpeg");
+    background-size: cover;
+    background-position: 30% center;
+}
+
+.bg-overlay {
+    background-color: rgba(0,0,0,0.8);
 }

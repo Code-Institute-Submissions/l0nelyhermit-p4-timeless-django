@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # dependencies
     'crispy_forms',
     'cloudinary',
+    
     # custom apps
     'watches',
     'cart',

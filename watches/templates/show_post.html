@@ -9,7 +9,7 @@
             {% for watch in watches %}
             <div class="row px-md-5 px-2 mb-3">
                 <div class="col-md-4 col-12 p-2 text-center">
-                    
+                    {% cloudinary watch.cover height=300 %}
                 </div>
                 <div class="col-md-8 col-12 py-2 px-3">
                     <h3>{{ watch.watch_brand }} {{watch.watch_model}}</h3>
@@ -21,12 +21,13 @@
                     </small>
                     {% else %}
                     <small class="p-4">
-                        
+
                     </small>
                     {% endif %}
                     <h4 class="text-muted">$ {{watch.price}}</h4>
                     <div class="my-5">
-                        <a href="{% url 'cart' item_id=watch.id %}" class="btn-sq text-light bg-dark border mr-3">BUY</a>
+                        <a href="{% url 'cart' item_id=watch.id %}"
+                            class="btn-sq text-light bg-dark border mr-3">BUY</a>
                         <a href="" class="btn-sq text-dark bg-light border border-dark">MAKE AN OFFER</a>
                     </div>
                     <p class="mt-3">{{ watch.description }}</p>

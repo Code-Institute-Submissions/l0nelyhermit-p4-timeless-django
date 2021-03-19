@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .models import Watch
 from .forms import WatchForm
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -34,6 +34,14 @@ def show_post(request):
     })
 
 
+def show_model(request, model):
+    watches = Watch.objects.filter(watch_brand=model)
+    return render(request, 'show_post.html', {
+        'watches': watches
+    })
+
+
+@login_required
 def edit_post(request, item_id):
     watch_edited = get_object_or_404(Watch, pk=item_id)
     if request.method == "POST":
@@ -56,6 +64,7 @@ def edit_post(request, item_id):
     })
 
 
+@login_required
 def delete_post(request, item_id):
     watch_delete = get_object_or_404(Watch, pk=item_id)
     watch_delete.delete()
