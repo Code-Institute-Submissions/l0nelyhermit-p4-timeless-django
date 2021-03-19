@@ -92,19 +92,26 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-SITE_ID: 1
+
+SITE_ID = 1
+
+# User will have to login through username or email
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+# User must provide a valid email address when registering
 ACCOUNT_EMAIL_REQUIRED = True
+# User must verify the email address before they can sign in
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# User has to  type in their email twice to prevent any spelling errors
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+# Minimum length of username
 ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+# Determines the URL to the login page
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+# Controls the page where Django will redirect to upon successful login
+LOGIN_REDIRECT_URL = "/"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-WSGI_APPLICATION = 'Timeless.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
