@@ -4,6 +4,45 @@
 {% block content %}
 <section class="container-fluid">
     <h3>cart</h3>
+    <div class="row">
+        <div class="col-md-2 col-12">
+            {% cloudinary watch.cover height=150 %}
+        </div>
+        <div class="col-md-8 col-12">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th class="text-left">Watch Brand / Model</th>
+                        <th>Unit Price</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="text-start w-50">{{watch.watch_brand}} {{watch.watch_model}}</td>
+                        <td>$ {{watch.price}} </td>
+                        <td>$ {{watch.price}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-start text-dark">
+                            <h4>Total : $ </h4>
+                        </td>
+                        <td>$ {{watch.price}}</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td colspan="3" class="text-end"><a href="" class="btn-sq bg-light border border-dark"> Make Payment </a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        
+    </div>
+
 </section>
 
 {% endblock %}
