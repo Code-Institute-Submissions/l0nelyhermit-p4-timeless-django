@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'cloudinary',
     # custom apps
     'watches',
+    'cart',
 ]
 
 MIDDLEWARE = [

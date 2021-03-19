@@ -22,3 +22,9 @@ main {
     letter-spacing: 4px;    
     text-align: center;
 }
+
+.btn-sq {
+    font-size: 0.8rem;
+    padding: 10px 40px;
+    text-decoration: none;
+}
