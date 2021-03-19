@@ -25,4 +25,6 @@ def cart(request, item_id):
             description='Payment made for transaction: '+watch.watch_brand+" "+watch.watch_model,
             source=request.POST['stripeToken']
         )
+        watch.status = 'Sold'
+        watch.save()
         return redirect(reverse('show_post'))
