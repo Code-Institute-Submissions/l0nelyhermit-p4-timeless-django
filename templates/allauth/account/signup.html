@@ -1,21 +1,39 @@
-{% extends "account/base.html" %}
+{% extends "base_light.html" %}
+{% load crispy_forms_tags %}
 
 {% load i18n %}
+
+{% block bg-class %} class="bg-rolex" {% endblock %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+<section class="container-fluid ">
+    <div class="row">
+        <div class="col-6 p-5">
+            <h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+            <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
+                    in</a>.{% endblocktrans %}</p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{form|crispy}}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit" class="btn-sq bg-dark text-light mt-3">{% trans "Sign Up" %} &raquo;</button>
+            </form>
+        </div>
+        <!-- decoration text -->
+        <div class="col-6 d-flex justify-content-center align-items-center bg-dark text-light px-5">
+            <div class="px-3">
+                <h1>Rolex Watches</h1>
+                <p>No name in the watch world approaches the stature of Rolex watches. Literally a synonym for quality
+                    and a household name that transcends the watch industry, Rolex is both an impeccable manufacture of
+                    segment-leading products and an article of international pop culture.</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

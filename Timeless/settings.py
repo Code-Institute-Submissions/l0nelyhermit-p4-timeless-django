@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://john-p4-timeless.herokuapp.com/','*']
+ALLOWED_HOSTS = ['https://john-p4-timeless.herokuapp.com/', '*']
 
 
 # Application definition
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     # dependencies
     'crispy_forms',
     'cloudinary',
-    
+
     # custom apps
     'watches',
     'cart',
