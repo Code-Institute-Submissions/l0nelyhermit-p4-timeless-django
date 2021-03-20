@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import index, create_post, show_post, edit_post, delete_post, show_model
+from .views import index, create_post, show_post, edit_post, delete_post
+from .views import show_model
 
 urlpatterns = [
     path('', index, name='index'),

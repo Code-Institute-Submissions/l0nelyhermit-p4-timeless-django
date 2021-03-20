@@ -23,19 +23,16 @@ main {
     letter-spacing: 4px;    
     text-align: center;
 }
-
 .btn-sq {
     font-size: 0.8rem;
     padding: 10px 40px;
     text-decoration: none;
 }
-
 .bg-rolex {
     background: url("../images/bg-rolex.jpeg");
     background-size: cover;
     background-position: 30% center;
 }
-
 .bg-overlay {
     background-color: rgba(0,0,0,0.8);
 }

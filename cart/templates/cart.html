@@ -3,9 +3,13 @@
 
 {% block content %}
 <section class="container-fluid">
-    <h3>cart</h3>
     <div class="row">
-        <div class="col-md-2 col-12">
+        <div class="col-12 px-5 py-3">
+            <h3>CART SUMMARY</h3>
+            <p>Below is the watch that you have selected</p>
+        </div>
+        <!-- display image of watch -->
+        <div class="col-md-2 col-12 text-md-end text-center">
             {% cloudinary watch.cover height=150 %}
         </div>
         <div class="col-md-8 col-12">
@@ -18,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <!-- display summary of cart -->
                     <tr>
                         <td class="text-start w-50">{{watch.watch_brand}} {{watch.watch_model}}</td>
                         <td>$ {{watch.price}} </td>
@@ -33,7 +37,7 @@
                     <tr></tr>
                     <tr>
                         <td colspan="3" class="text-end">
-                            <!-- <td colspan="3" class="text-end"><a href="" class="btn-sq bg-light border border-dark"> Make Payment </a></td> -->
+                            <!-- Form for stripe -->
                             <form method="POST">
                                 {% csrf_token %}
                                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -46,10 +50,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <div class="mt-5">
-
     </div>
 
 </section>

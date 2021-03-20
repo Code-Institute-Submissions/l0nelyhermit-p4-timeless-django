@@ -5,18 +5,22 @@
 <section class="container-fluid ">
     <div class="row">
         <div class="col-12 ">
-            <hr>
+            <!-- display each listing -->
             {% for watch in watches %}
             <div class="row px-md-5 px-2 mb-3">
+                <!-- watch picture -->
                 <div class="col-md-4 col-12 p-2 text-center">
                     {% cloudinary watch.cover height=300 %}
                 </div>
+                <!-- watch information -->
                 <div class="col-md-8 col-12 py-2 px-3">
                     <h3>{{ watch.watch_brand }} {{watch.watch_model}}</h3>
                     {% if user.is_authenticated %}
                     <small>
+                        <!-- link to edit watch info -->
                         <a href="{% url 'edit_post' item_id=watch.id %}" class="text-muted fst-italic">modify</a>
                         |
+                        <!-- link to delete watch post -->
                         <a href="{% url 'delete_post' item_id=watch.id %}" class="text-danger fst-italic">unlist</a>
                     </small>
                     {% else %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Watch
 from .forms import WatchForm
 from django.contrib.auth.decorators import login_required

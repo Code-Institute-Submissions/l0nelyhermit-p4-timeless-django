@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">
@@ -36,13 +37,14 @@
                             aria-expanded="false">
                             SHOP
                         </a>
+                        <!-- direct to selected models -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{% url 'show_model' model='ROLEX' %}">ROLEX</a></li>
                             <li><a class="dropdown-item" href="{% url 'show_model' model='HUBLOT' %}">HUBLOT</a></li>
                             <li><a class="dropdown-item" href="{% url 'show_model' model='OMEGA' %}">OMEGA</a></li>
                         </ul>
                     </li>
-                    <!-- SELL WATCH - CRUD MENU -->
+                    <!-- SELL WATCH - CRUD MENU - view & create post -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -66,6 +68,8 @@
                             <li><a class="dropdown-item disabled" disabled href="#">OUR LOCATIION</a></li>
                         </ul>
                     </li>
+
+                    <!-- LOGIN LOGOUT LINK -->
                     {% if user.is_authenticated %}
                     <span class="nav-link d-md-inline d-none fsl-italic">User: {{ request.user }} </span>
                     <li class="nav-item">
